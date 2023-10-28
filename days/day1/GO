@@ -1,0 +1,94 @@
+1. What is Golang, and what sets it apart from other programming languages?
+  Golang, also known as Go, is a statically-typed, compiled programming language designed for simplicity and efficiency. 
+  What sets it apart is its focus on simplicity, concurrency support through goroutines, and a strong standard library.
+
+2.Explain goroutines and how they differ from traditional threads.
+    Goroutines are lightweight threads of execution in Golang, managed by the Go runtime. 
+    They are different from traditional threads as they are multiplexed onto a smaller number of OS threads, making them more efficient for concurrency.
+
+3.How do you handle errors in Golang?
+    Error handling in Golang is typically done by returning error values from functions. Developers can use the "error" type and return errors explicitly. 
+      A common pattern is to return both a result and an error and check if the error is nil to determine success or failure.
+
+4.Describe the concept of channels in Golang.
+  Channels are a fundamental concept in Golang for communicating and synchronizing between goroutines. They provide a way for goroutines to send and receive data safely.
+
+ 5.What is the purpose of the defer keyword in Golang?
+      The defer keyword in Golang is used to delay the execution of a function until the surrounding function returns.This can be useful for a variety of purposes, 
+      such as ensuring that certain operations are always performed, regardless of whether an error occurs or not.
+
+6.Explain the difference between a map and a slice in Golang.
+      A map is a built-in data structure in Golang used to create key-value associations, while a slice is a dynamic array for storing sequences of elements.
+
+7.What are interfaces in Golang, and how do they work?
+      Interfaces in Golang define a set of method signatures that a type must implement. They allow you to write more flexible and polymorphic code.
+      Example : For example, you could define an interface for a database connection. Then, you could write code that uses this interface to interact with the database. 
+      This means that your code is not coupled to a specific database implementation.
+      You can easily switch to a different database implementation, as long as it implements the database connection interface.
+
+      Code example : type Shape interface {
+  Area() float64
+  Perimeter() float64
+}
+This interface defines two methods, Area() and Perimeter(), which must be implemented by any type that wants to implement the Shape interface.
+
+Here is an example of a type that implements the Shape interface:
+  type Rectangle struct {
+  Width float64
+  Height float64
+}
+
+func (r Rectangle) Area() float64 {
+  return r.Width * r.Height
+}
+
+func (r Rectangle) Perimeter() float64 {
+  return 2 * (r.Width + r.Height)
+}
+Now, we can write code that works with any Shape type, as long as it implements the Area() and Perimeter() methods:
+func CalculateShapeArea(shape Shape) float64 {
+  return shape.Area()
+}
+
+func CalculateShapePerimeter(shape Shape) float64 {
+  return shape.Perimeter()
+}
+
+
+8.How do you declare and use pointers in Golang?
+  Pointers are variables that store the memory address of another value. They are often used for efficiency or to modify data in-place.
+
+9. Describe the use of goroutine synchronization primitives like mutexes.
+   A mutex is a synchronization primitive that ensures that only one goroutine can access a shared data structure at a time.
+  This is important to prevent race conditions, which can occur when two or more goroutines are trying to access the same data at the same time and modify it in conflicting ways.
+
+10.What is the purpose of the range keyword in Golang?
+  The range keyword is used to iterate over various data structures like slices, maps, and channels. It simplifies the process of iterating through these collections.
+
+11.Can you explain the difference between concurrency and parallelism in Golang?
+  Concurrency in Golang is the ability of a program to handle multiple tasks concurrently, 
+  whereas parallelism refers to executing these tasks simultaneously. Golang excels at concurrency due to its goroutine and channel system.
+
+12.How do you prevent race conditions in Golang?
+  To prevent race conditions in Golang, we use mutexes (sync.Mutex) to protect shared resources. Goroutines acquire the lock before accessing the shared data, ensuring exclusive access.
+
+13.What is the purpose of the sync package, and when would you use it?
+  The sync package in Golang provides synchronization primitives like mutexes, wait groups, and conditions to help manage concurrent access to shared resources
+
+14.How do you control the number of goroutines running concurrently in Golang?
+  You can control the number of goroutines running concurrently by using techniques like worker pools or limiting the number of concurrent goroutines using a buffered channel.
+
+15. What is the idiomatic way to handle errors in Golang?
+  The idiomatic way to handle errors in Golang is to check if the error is nil. If the error is not nil, then an error has occurred and the program should handle it accordingly.
+  This can be done by logging the error, returning the error to the caller, or taking some other corrective action.
+
+16. Explain the panic and recover mechanisms in Golang.
+  Panic and recover are two mechanisms in Go that can be used to handle errors. Panic is used to stop the execution of the program and recover is used to resume execution after a panic.
+
+Panic is typically used when the program has encountered an unrecoverable error, such as a nil pointer dereference or a division by zero. 
+  When a panic is called, the program will unwind the call stack and terminate.
+
+Recover is typically used to recover from panics that are caused by known errors.
+  For example, a function that reads a file might panic if the file does not exist. The caller of the function can then use recover to handle the error and continue execution.
+      
+
