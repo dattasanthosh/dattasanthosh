@@ -1,0 +1,116 @@
+Explain the difference between a pointer and a value in Golang.
+In Golang, a pointer is a variable that stores the address of another variable. A value is a variable that stores the actual value of data.
+
+2.How do you handle variable scope in Golang?
+Variable scope in Golang refers to the part of the program where a variable is accessible.
+
+There are two types of variable scope in Golang:
+
+Block scope: Variables declared inside a block (such as a function, loop, or switch statement) are only accessible inside the block.
+Package scope: Variables declared outside of any block are accessible throughout the package.
+
+3.What is a variadic function, and how is it defined in Golang?
+A variadic function is a function that can accept a variable number of arguments. 
+Variadic functions are defined using the ellipsis (...) operator. 
+Example : func sum(numbers ...int) int {
+  var total int
+  for _, number := range numbers {
+    total += number
+  }
+  return total
+}
+
+4.Describe the purpose of the init function in Golang.
+
+The init() function in Golang is a special function that is executed before any other part of the package is executed.
+This makes it ideal for initializing global variables and other state that needs to be set up before the package can be used.
+
+5.What are the differences between goroutines and threads in terms of memory usage and performance?
+Goroutines and threads are both lightweight concurrency primitives, but they have different performance and memory usage characteristics.
+
+Memory usage: Goroutines are much lighter-weight than threads, requiring only a few kilobytes of memory per goroutine. 
+Threads, on the other hand, typically require several megabytes of memory per thread.
+
+Performance: Goroutines are generally more efficient than threads, especially for I/O-bound workloads. 
+This is because goroutines are managed by the Go runtime, which can efficiently schedule them on multiple threads. 
+Threads, on the other hand, are managed by the operating system, which can incur significant overhead when switching between threads.
+
+5. What is the purpose of the select statement in Golang, and how does it work?
+The select statement in Golang is a powerful tool for controlling concurrency. 
+It allows you to wait for multiple communication operations to become ready, and then execute the first operation that becomes ready.
+select {
+case message := <-ch1:
+    // Process message from channel ch1
+case message := <-ch2:
+    // Process message from channel ch2
+case <-time.After(1 * time.Second):
+    // Timeout
+}
+This select statement will block until one of the following events occurs:
+
+A message is received on channel ch1.
+A message is received on channel ch2.
+The timeout expires after 1 second.
+
+6.Explain the concept of type assertion and type switches in Golang.
+Type assertion in Golang is a way to convert a value from one type to another. 
+Type switches in Golang are a way to branch on the type of a value. 
+This can be useful when you need to perform different operations based on the type of a value.
+
+7.When would you choose to use an empty interface (interface{}) in your code?
+When you need to write a function that can accept any type of value as an argument. 
+For example, the fmt.Println() function takes an empty interface as an argument and can be used to print any type of value.
+When you need to store a value of an unknown type. For example, you might use an empty interface to store the value of a database record.
+
+8.Can a struct implement multiple interfaces in Golang?
+Yes, a struct can implement multiple interfaces in Golang.
+
+9.How is polymorphism achieved in Golang?
+Polymorphism is achieved in Golang through the use of interfaces.
+An interface is a collection of method signatures that a type must implement in order to be considered an instance of that interface.
+
+10.Explain the fan-out, fan-in pattern in Golang, and how it can be implemented.
+The fan-out, fan-in pattern in Golang is a concurrency pattern that can be used to parallelize and coordinate concurrent tasks.
+It is particularly useful when you have a time-consuming task that can be divided into smaller subtasks that can be executed concurrently.
+
+The fan-out, fan-in pattern works by first fanning out the work to multiple goroutines. Each goroutine is responsible for completing a single subtask. Once all of the goroutines have completed their subtasks, the fan-in operation is used to collect the results from each goroutine.
+
+The fan-out, fan-in pattern can be implemented in Golang using channels. Channels are a way to communicate between goroutines.
+To implement the fan-out, fan-in pattern, you would first create a channel to send the work to the goroutines. 
+Then, you would start a goroutine for each subtask. Each goroutine would read the work from the channel and complete its subtask.
+Once the goroutine has completed its subtask, it would send the results back to the main goroutine over a different channel.
+
+Once all of the goroutines have completed their subtasks, the main goroutine would close the channel that it is using to receive the results.
+This would signal to the goroutines that they can stop sending results. The main goroutine would then read the results from the channel and process them.
+
+11.What is the purpose of the sync.WaitGroup type, and how is it used for synchronization?
+
+The sync.WaitGroup type in Golang is used to synchronize goroutines. It allows you to wait for a collection of goroutines to finish before proceeding.
+
+The sync.WaitGroup type has three methods:
+
+Add(1): increments the counter by 1.
+Done(): decrements the counter by 1 and signals that the goroutine has finished.
+Wait(): blocks until the counter reaches 0, indicating that all of the goroutines have finished
+
+12.How do you prevent deadlocks in Golang when working with channels?
+Avoid blocking on empty channels. If a goroutine is trying to read from an empty channel, it will block until another goroutine writes to the channel. 
+If there are no other goroutines running, or if all of the other goroutines are also blocked waiting to read from the channel, then a deadlock will occur. 
+To avoid this, you should use a select statement to check if the channel is empty before blocking on it.
+Avoid blocking on full channels. If a goroutine is trying to write to a full channel, it will block until another goroutine reads from the channel.
+If there are no other goroutines running, or if all of the other goroutines are also blocked waiting to write to the channel, then a deadlock will occur. 
+To avoid this, you should use a select statement to check if the channel is full before blocking on it.
+Use buffered channels. A buffered channel is a channel that can hold a certain number of messages before blocking. 
+This can help to prevent deadlocks by allowing goroutines to continue running even if the channel is temporarily empty or full.
+Use timeouts. If a goroutine is blocked waiting to read or write to a channel, you can use a timeout to specify how long the goroutine should wait before giving up. 
+This can help to prevent deadlocks by ensuring that goroutines do not block forever.
+
+13.What are vendoring and GOPATH, and how do they relate to package management in Golang?
+GOPATH was used to specify where Go should find, store, and manage packages and binaries.
+Developers would typically use the go get command to download packages into their GOPATH.
+
+Vendoring was used to manage dependencies within your project by explicitly copying or "vendoring" the source code of external packages into your project.
+This allowed you to have control over your project's dependencies and ensure reproducible builds.
+
+14.Explain the difference between go get and go mod tidy in managing dependencies.
+
