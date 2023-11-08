@@ -46,4 +46,12 @@ Performance measurement is crucial to assess how well an ML model generalizes to
 It helps in identifying the model's strengths and weaknesses, and in making informed decisions for model improvement and deployment. 
 Dedicated tools automate the process and provide standardized metrics, making it easier to compare models and track their performance over time.
 
-12.
+12.Exposure to tools such as Clang-Tidy, Clang-Format, etc.
+Clang-Tidy and Clang-Format. Clang-Tidy is a static analysis tool for C and C++ code, while Clang-Format is a code formatter for C and C++ code. 
+Both tools are developed by the LLVM project and are used by many C and C++ developers to improve the quality of their code.
+
+Clang-Tidy can be used to find and fix a variety of errors and warnings in C and C++ code,
+such as unused variables, potential memory leaks, and style violations. 
+It can also be used to enforce coding conventions and standards. Clang-Format can be used to automatically format C and C++ code to a consistent style. This can help to improve the readability and maintainability of code.
+
+
