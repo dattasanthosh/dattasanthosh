@@ -1,0 +1,49 @@
+What are Jenkins agents and how do they work in distributed builds?
+
+In a Jenkins distributed build environment, Jenkins agents, also known as slaves or workers, are responsible for executing the actual build tasks. 
+They are physical or virtual machines that are connected to the Jenkins controller, which is the central node that manages the entire build process. 
+The controller assigns build jobs to the agents based on their availability and capabilities, and the agents then perform the necessary tasks, such as compiling, testing, and packaging the software.
+
+2. What plugins do you find most useful when working with Jenkins for software builds and testing?
+Git Plugin,Maven Integration Plugin,JUnit Plugin,Pipeline Plugin,Kubernetes Plugin,Docker Plugin,Slack-Jenkins Plugin, Teams-Jenkins plugin,Performance Plugin,Publish Over SSH Plugin,Green Balls Plugin
+
+3.How do you manage secrets or credentials in Jenkins for secure deployment?
+Use Jenkins Credentials Plugin,Store Secrets in Secret Fields,Leverage Credentials Binding Plugin,integrate with vault or cyber ark conjur, Implement RBAC.
+
+4.Describe a situation where you had to collaborate with cross-functional teams (e.g., development, testing, DevOps) to gather requirements for the internal web page. How did you ensure the page met their needs?
+I would use a combination of web development technologies and tools, such as HTML, CSS, JavaScript, and a web framework like React or Angular for the front-end.
+For the back-end, I might choose a language like Python or Node.js, and a web framework like Django or Express.js. 
+I'd use a relational database, such as PostgreSQL, to store build information and code coverage data.
+To automate data collection and updates, I'd leverage CI/CD tools, and for visualization, I'd use charting libraries like Chart.js or D3.js.
+
+5.How do you ensure that the web page remains up-to-date as new builds and code coverage data becomes available?
+Real-time updates can be achieved through the use of WebSocket or server-sent events (SSE)
+
+6.Code Coverage Tool Explanation:
+Code coverage tools like Klocwork and Parasoft are essential for assessing the quality of software code by measuring the extent to which code is executed during testing.
+Klocwork primarily focuses on static code analysis, detecting issues early in the development process. 
+Parasoft, on the other hand, performs dynamic code analysis by simulating runtime conditions to find defects.
+Both tools play a crucial role in identifying potential vulnerabilities and ensuring code reliability.
+
+7.Setting up and Configuring Klocwork and Parasoft:
+Setting up Klocwork and Parasoft in a CI/CD pipeline involves installing the tools on the CI server, configuring project-specific settings, and creating integration points with the version control system and build processes
+
+8.Types of Code Coverage:
+Both Klocwork and Parasoft provide line coverage metrics and branch coverage metrics.
+Line coverage measures the percentage of lines executed, while branch coverage assesses the percentage of decision branches tested. 
+These metrics are crucial for evaluating the thoroughness of testing and identifying untested code paths.
+
+9.Static vs. Dynamic Analysis:
+Static code analysis tools like Klocwork review source code without executing it, identifying issues such as potential vulnerabilities and coding standards violations. 
+Dynamic code analysis tools like Parasoft, in contrast, evaluate code during execution, identifying issues related to runtime behavior.
+Static analysis is suitable for early defect identification, while dynamic analysis is valuable for testing real-world scenarios.
+
+10.Alternative Code Coverage Tools:
+ Coverity and SonarQube : both are static code tools
+
+11.Can you explain the importance of performance measurement for ML models, and why it's essential to have dedicated tools for this purpose?
+Performance measurement is crucial to assess how well an ML model generalizes to new data.
+It helps in identifying the model's strengths and weaknesses, and in making informed decisions for model improvement and deployment. 
+Dedicated tools automate the process and provide standardized metrics, making it easier to compare models and track their performance over time.
+
+12.
