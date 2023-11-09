@@ -1,21 +1,20 @@
 difference between list,tuple,set,dictionary in python
 List:
-
 Ordered collection of items.
 Mutable, meaning you can change, add, or remove elements after the list is created.
 Defined by square brackets [].
-Tuple:
 
+Tuple:
 Ordered collection of items.
 Immutable, meaning you cannot change, add, or remove elements after the tuple is created.
 Defined by parentheses ().
-Set:
 
+Set:
 Unordered collection of unique items.
 Mutable, meaning you can add or remove elements, but the set itself is unordered.
 Defined by curly braces {}.
-Dictionary:
 
+Dictionary:
 Unordered collection of key-value pairs.
 Mutable, meaning you can change, add, or remove key-value pairs.
 Defined by curly braces {}, where each element is in the form key: value
