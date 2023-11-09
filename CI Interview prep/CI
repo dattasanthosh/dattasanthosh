@@ -54,4 +54,13 @@ Clang-Tidy can be used to find and fix a variety of errors and warnings in C and
 such as unused variables, potential memory leaks, and style violations. 
 It can also be used to enforce coding conventions and standards. Clang-Format can be used to automatically format C and C++ code to a consistent style. This can help to improve the readability and maintainability of code.
 
+13.What factors do you consider when selecting hardware for build servers?
+Hardware selection for build servers depends on factors such as the size of the codebase, the frequency of builds, and parallelization requirements.
+Considerations include CPU power, memory, storage speed, and network bandwidth. Scalability and the ability to handle concurrent builds efficiently are also crucial.
+
+14.What is Gerrit, and how does it differ from other code review tools?
+Gerrit is a web-based code review tool designed for use with Git. 
+It provides a platform for collaborative code review before changes are merged into the main codebase. 
+Unlike some other tools, Gerrit integrates tightly with Git, offering features like patch sets, inline commenting, and access controls specific to Git repositories.
+
 
